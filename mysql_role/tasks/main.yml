@@ -1,0 +1,25 @@
+---
+# tasks file for mysql-server
+- name: Installation of MySQL on Ubuntu  
+  import_tasks: debian.yml
+  when: ansible_distribution == 'Ubuntu' and (ansible_distribution_major_version == '14' or ansible_distribution_major_version == '16')
+
+- name: Installing MySQL-Python Dependencies
+  import_tasks: python_dependencies.yml
+
+- name: Installaiton of MySQL on CentOS
+  import_tasks: redhat.yml
+#  when: ansible_distribution == "CentOS" and (ansible_distribution_major_version == '6' or ansible_distribution_major_version == '7')
+
+#- name: Installing MySQL-Python Dependencies
+#  import_tasks: python_dependencies.yml
+
+- name: MySQL Secure Installation
+  import_tasks: mysql_secure_installation.yml
+
+- name: Creating Databases
+  import_tasks: database.yml
+
+- name: Creating Users
+  import_tasks: user.yml
+

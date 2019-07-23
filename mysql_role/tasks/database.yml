@@ -1,0 +1,6 @@
+---
+- name: Create a new database with name 'bobdata'
+  mysql_db: 
+    name: "{{ item.db_name }}"
+    state: present
+  with_items: "{{ database_name }}"

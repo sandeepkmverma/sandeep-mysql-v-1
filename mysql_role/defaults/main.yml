@@ -1,0 +1,9 @@
+---
+# defaults file for mysql-server
+#mysql_root_password: "sanny"
+
+
+mysql_root_password: "sanny"
+mysql_user_name: "opstree"
+mysql_user_password: "opstree"
+mysql_database_name: "opstree"
